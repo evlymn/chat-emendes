@@ -1,0 +1,25 @@
+<div class="principal-flex">
+  <div class="mensagens-flex">
+    <div class="mensagens-container">
+      <div *ngFor="let item of (mensagens | async)" class="mensagem">
+        <img [src]="item.foto" />
+        <div>
+          <div>
+            {{ item.nome }} <br />
+            <span class="horario">{{ item.time | amTimeAgo: true }} </span>
+          </div>
+          <div>
+            {{ item.mensagem }} <br />
+            <img *ngIf="item.urlImagem" [src]="item.urlImagem" />
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div *ngIf="admin.formHabilitado" class="mensagem-form">
+    <input  (keyup.enter)="enviar()" placeholder="Qual sua mensagem?" [(ngModel)]="mensagem" type="text" />
+    <input  type="file" capture="camera" (change)="onImageChange($event)" accept="image/*" #file />
+    <img *ngIf="admin.imagemHabilitada" (click)="file.click()" [src]="srcButtom" />
+    <img (click)="enviar()" src="assets/imagens/send.svg" />
+  </div>
+</div>
