@@ -25,7 +25,7 @@
     "blueimp-canvas-to-blob": "^3.17.0",
     "bootstrap": "^4.4.1",
     "firebase": "^7.8.2",
-    "jquery": "^3.4.1",
+    "jquery": "^3.5.0",
     "moment": "^2.24.0",
     "ng2-img-max": "^2.1.18",
     "ngx-bootstrap": "^5.3.2",
